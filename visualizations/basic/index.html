@@ -88,10 +88,24 @@
                 //put in little circles to drag
                 node.append("circle")
                     .attr("r", 7.5)
-                    .attr("class", function (d) { return "node " + d.status; })
                     .attr("fill", (d) => { return (d.status === "active") ?  "red" :  "green" })
-                    .call(force.drag);
-
+                    .call(force.drag)
+                    .on("mouseover", function(d) {		
+                        if(d.date_detected)	{
+                        tooltip.transition()		
+                            .duration(200)		
+                            .style("opacity", .9);		
+                        tooltip.html("Detected on :" + d.date_detected)	
+                            .style("left", (d3.event.pageX) + "px")		
+                            .style("top", (d3.event.pageY - 28) + "px");
+                        }
+                    })					
+                    .on("mouseout", function(d) {		
+                        tooltip.transition()		
+                            .duration(500)		
+                            .style("opacity", 0);	
+                    });
+              
                 //add the words  
                 node.append("text")
                     .attr("dx", 12)
