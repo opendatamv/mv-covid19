@@ -1,77 +1,22 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/styles.css">
-<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
-<style>
-line.link {
-    stroke: #afafaf;
-    stroke-width: 2px;
-}
-
-.node {
-    position: relative;
-}
-
-.node text {
-    stroke:#333;
-    cursor: pointer;
-}
-
-.node circle{
-    /* stroke:#fff; */
-    fill:#555;
-}
-
-.node .recovered{
-    fill: green;
-    stroke-opacity: .3; 
-    stroke-width: 4;
-}
-
-.node .active{
-    fill: var(--dangger);
-    stroke-opacity: .3; 
-    stroke-width: 4;
-}
-
-.tooltip {	
-    position: absolute;			
-    text-align: center;			
-    width: 60px;					
-    height: 28px;					
-    padding: 2px;				
-    font: 12px sans-serif;		
-    background: lightsteelblue;	
-    border: 0px;		
-    border-radius: 8px;			
-    pointer-events: none;			
-}
+<link rel="stylesheet" type="text/css" src="./css/styles.css">
 </style>
 
-<body class="flex">
-    <div id="chart" class="mx-auto w-full"></div>
+<body>
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
     <script>
 
         var linkpath = ("https://maldiviandevelopers.github.io/mv-covid19-graph/edges.csv");
         var nodepath = ("https://maldiviandevelopers.github.io/mv-covid19-graph/nodes.csv");
 
-        var windowWidth = window.innerWidth
         var width = 1000, height = 600;
 
         var color = d3.scale.category20();
 
-        var svg = d3.select("#chart").append("svg")
-            .attr("class", "w-full h-screen")
-            .attr("align","center");
-            // .attr("width", width)
-            // .attr("height", height);
-
-        // Define the div for the tooltip
-        var tooltip = d3.select("body").append("div")	
-            .attr("class", "tooltip")				
-            .style("opacity", 0);
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
 
         //Want to have different labels
@@ -80,9 +25,9 @@ line.link {
             //using width/height from above, but size is mainly det'd by linkDistance and charge
             .size([width, height])
             // how far between nodes                         
-            .linkDistance(100)
+            .linkDistance(80)
             // changes how close nodes will get to each other. Neg is farther apart.
-            .charge(-500);
+            .charge(-300);
 
         d3.csv(nodepath, function (nodes) {
 
@@ -142,8 +87,8 @@ line.link {
 
                 //put in little circles to drag
                 node.append("circle")
-                    .attr("r", 30)
-                    .attr("class", function (d) { return "node " + d.status; })
+                    .attr("r", 7.5)
+                    .attr("fill", (d) => { return (d.status === "active") ?  "red" :  "green" })
                     .call(force.drag)
                     .on("mouseover", function(d) {		
                         if(d.date_detected)	{
@@ -160,19 +105,13 @@ line.link {
                             .duration(500)		
                             .style("opacity", 0);	
                     });
-
+              
                 //add the words  
                 node.append("text")
+                    .attr("dx", 12)
                     .attr("dy", ".35em")
-                    .attr("fill", "white")
-                    .attr("stroke-width", 0)
-                    .attr("text-anchor", "middle")
-                    .attr("font-size", 12)
-                    .attr("font-family", "Arial")
-                    .attr("font-weight", "bold")
                     .text(function (d) { return d.name });
-                
-                
+
                 //get it going!
                 force
                     .nodes(nodes)
@@ -197,5 +136,3 @@ line.link {
         });
 
     </script>
-</body>
-</html>
