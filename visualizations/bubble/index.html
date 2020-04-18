@@ -84,6 +84,7 @@ line.link {
             // changes how close nodes will get to each other. Neg is farther apart.
             .charge(-500);
 
+
         d3.csv(nodepath, function (nodes) {
 
             var nodelookup = {};
@@ -130,13 +131,8 @@ line.link {
                 var link = svg.selectAll(".link")
                     .data(links)
                     .enter().append("line")
-<<<<<<< HEAD
                     .attr("class", "link")
                     .style("stroke-width", function(d) { return Math.sqrt(d.weight); });
-=======
-                    .attr("stroke", "black")
-                    .attr("class", function (d) { return "link"; })
->>>>>>> abefffb3f9747c074f3107519c0282683ac985c3
 
                 // Create the node circles.
                 var node = svg.selectAll(".node")
@@ -149,7 +145,6 @@ line.link {
                 node.append("circle")
                     .attr("r", 30)
                     .attr("class", function (d) { return "node " + d.status; })
-<<<<<<< HEAD
                     .call(force.drag)
                     .on("mouseover", function(d) {		
                         if(d.date_detected)	{
@@ -166,10 +161,6 @@ line.link {
                             .duration(500)		
                             .style("opacity", 0);	
                     });
-=======
-                    .attr("fill", (d) => { return (d.status === "active") ?  "red" :  "green" })
-                    .call(force.drag);
->>>>>>> abefffb3f9747c074f3107519c0282683ac985c3
 
                 //add the words  
                 node.append("text")
