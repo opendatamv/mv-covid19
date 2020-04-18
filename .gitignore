@@ -9,3 +9,4 @@
 .history/
 *.gephi
 data.xlsx
+.DS_Store

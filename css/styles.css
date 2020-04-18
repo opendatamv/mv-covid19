@@ -1,5 +1,5 @@
 .link {
-    stroke: #999;
+    stroke: #000;
     stroke-opacity: .6;
 }
 
@@ -14,13 +14,13 @@
     font-weight: bolder;
 }
 
-.node.recovered{
+.recovered{
     fill: green;
     stroke-opacity: .3; 
     stroke-width: 4;
 }
 
-.node.active{
+.active{
     fill: red;
     stroke-opacity: .3; 
     stroke-width: 4;
