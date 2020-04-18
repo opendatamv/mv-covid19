@@ -76,7 +76,7 @@ line.link {
             // how far between nodes                         
             .linkDistance(100)
             // changes how close nodes will get to each other. Neg is farther apart.
-            .charge(-500);
+            .charge(-320);
 
 
         d3.csv(nodepath, function (nodes) {
@@ -135,7 +135,7 @@ line.link {
 
                 //put in little circles to drag
                 node.append("circle")
-                    .attr("r", 30)
+                    .attr("r", (chartDiv.clientWidth*0.05>30) ? 30 : chartDiv.clientWidth*0.05)
                     .attr("class", function (d) { return "node " + d.status; })
                     .call(force.drag)
                     .on("mouseover", function(d, e, f) {	
@@ -162,7 +162,7 @@ line.link {
                     .attr("fill", "white")
                     .attr("stroke-width", 0)
                     .attr("text-anchor", "middle")
-                    .attr("font-size", 12)
+                    .attr("font-size", (chartDiv.clientWidth*0.02>12) ? 12 : chartDiv.clientWidth*0.02)
                     .attr("font-family", "Arial")
                     .attr("font-weight", "bold")
                     .text(function (d) { return d.name });
