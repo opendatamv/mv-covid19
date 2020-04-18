@@ -9,8 +9,12 @@ cluster graphs. View the included render in this repository at
 
 ### How to contribute
 
+1. **Contributing data**  
 Make chanes to `nodes.csv`, `edges.csv`. Please follow guidelines
- 
+
+2. **Contributing visuals**  
+Create a subdirectory under `visualizations` for your awesome sample, and update `index.html` to point to it
+   
 ### Guidelines for contribution
 
 * Do not change the schema of the files
