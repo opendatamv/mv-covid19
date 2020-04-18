@@ -1,4 +1,4 @@
-﻿case_id,date_detected,date_recovered,location_detected,Description,status
+﻿case_id,date_detected,date_recovered,location_detected,description,status
 MAV021,,,Male’,,active
 MAV022,,,Male’,,active
 MAV023,,,Male’,,active
@@ -13,3 +13,4 @@ MAV031,,,Male’,,active
 MAV032,,,Male’,,active
 MAV033,,,Male’,,active
 MAV034,,,Male’,,active
+MAV035,,,Male',,active
