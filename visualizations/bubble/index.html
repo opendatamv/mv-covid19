@@ -36,41 +36,35 @@ line.link {
     stroke-width: 4;
 }
 
-.tooltip {	
-    position: absolute;			
-    text-align: center;			
-    width: 60px;					
-    height: 28px;					
-    padding: 2px;				
-    font: 12px sans-serif;		
-    background: lightsteelblue;	
-    border: 0px;		
-    border-radius: 8px;			
+.tooltip {					
+    width: 105px;													
+    font: 12px "Arial";		
+    background: lightsteelblue;		
     pointer-events: none;			
 }
 </style>
 
 <body class="flex">
-    <div id="chart" class="mx-auto w-full"></div>
+    <div id="chart" class="mx-auto w-full md:w-1/2 h-screen"></div>
     <script>
 
         var linkpath = ("https://maldiviandevelopers.github.io/mv-covid19-graph/edges.csv");
         var nodepath = ("https://maldiviandevelopers.github.io/mv-covid19-graph/nodes.csv");
 
         var windowWidth = window.innerWidth
+        var chartDiv = document.getElementById("chart")
         var width = 1000, height = 600;
 
         var color = d3.scale.category20();
 
         var svg = d3.select("#chart").append("svg")
-            .attr("class", "w-full h-screen")
-            .attr("align","center");
-            // .attr("width", width)
-            // .attr("height", height);
+            .attr("align","center")
+            .attr("width", chartDiv.clientWidth)
+            .attr("height", chartDiv.clientHeight);
 
         // Define the div for the tooltip
-        var tooltip = d3.select("body").append("div")	
-            .attr("class", "tooltip")				
+        var tooltip = d3.select("#chart").append("div")	
+            .attr("class", "tooltip absolute rounded p-2")				
             .style("opacity", 0);
 
 
@@ -95,7 +89,7 @@ line.link {
             nodes.forEach(function (row) {
                 nodelookup[row.case_id] = count;
 
-                nodecollector[row.case_id] = { name: row.case_id, status: row.status };
+                nodecollector[row.case_id] = { name: row.case_id, status: row.status, date_detected: row.date_detected, gender: row.gender, age: row.age };
                 //console.log(nodecollector)
 
                 //console.log(row.node)
@@ -146,15 +140,18 @@ line.link {
                     .attr("r", 30)
                     .attr("class", function (d) { return "node " + d.status; })
                     .call(force.drag)
-                    .on("mouseover", function(d) {		
-                        if(d.date_detected)	{
+                    .on("mouseover", function(d) {	
+                        console.log("hover", d)	
+                        var tipText = `<strong>${d.date_detected}</strong><br>`
+                        tipText = (d.age) ? tipText + `<br>Age: <strong>${d.age}</strong>` : tipText
+                        tipText = (d.gender!=='n/a') ? tipText + `<br>Gender: <strong>${(d.gender=='m') ? 'Male' : 'Female'}</strong>` : tipText
+
                         tooltip.transition()		
                             .duration(200)		
                             .style("opacity", .9);		
-                        tooltip.html("Detected on :" + d.date_detected)	
+                        tooltip.html(tipText)	
                             .style("left", (d3.event.pageX) + "px")		
                             .style("top", (d3.event.pageY - 28) + "px");
-                        }
                     })					
                     .on("mouseout", function(d) {		
                         tooltip.transition()		
