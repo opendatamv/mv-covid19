@@ -1,6 +1,6 @@
 .link {
     stroke: #000;
-    stroke-opacity: .6;
+    stroke-opacity: 1;
 }
 
 .node {
@@ -21,7 +21,7 @@
 }
 
 .active{
-    fill: red;
+    background-color: crimson;
     stroke-opacity: .3; 
     stroke-width: 4;
 }

@@ -29,7 +29,6 @@
             // changes how close nodes will get to each other. Neg is farther apart.
             .charge(-300);
 
-
         d3.csv(nodepath, function (nodes) {
 
             var nodelookup = {};
@@ -76,6 +75,7 @@
                 var link = svg.selectAll(".link")
                     .data(links)
                     .enter().append("line")
+                    .attr("stroke", "black")
                     .attr("class", function (d) { return "link"; })
 
                 // Create the node circles.
@@ -89,6 +89,7 @@
                 node.append("circle")
                     .attr("r", 7.5)
                     .attr("class", function (d) { return "node " + d.status; })
+                    .attr("fill", (d) => { return (d.status === "active") ?  "red" :  "green" })
                     .call(force.drag);
 
                 //add the words  
