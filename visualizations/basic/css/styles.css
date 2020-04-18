@@ -1,27 +1,5 @@
-.link {
-    stroke: #000;
-    stroke-opacity: .6;
-}
-
-.node {
-    stroke: #fff;
-    stroke-width: .5px;
-}
-
-.node text {
-    pointer-events: none;
-    font: 15px sans-serif;
-    font-weight: bolder;
-}
-
-.recovered{
-    fill: green;
-    stroke-opacity: .3; 
-    stroke-width: 4;
-}
-
-.active{
-    fill: red;
-    stroke-opacity: .3; 
-    stroke-width: 4;
+:root {
+    --dangger: #eb594f;
+    --dangger-lighter: #eb594f;
+    --dangger-darker: #a83026;
 }
