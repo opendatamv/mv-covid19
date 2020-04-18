@@ -3,3 +3,30 @@
     --dangger-lighter: #eb594f;
     --dangger-darker: #a83026;
 }
+.link {
+    stroke: #000;
+    stroke-opacity: 1;
+}
+
+.node {
+    stroke: #fff;
+    stroke-width: .5px;
+}
+
+.node text {
+    pointer-events: none;
+    font: 15px sans-serif;
+    font-weight: bolder;
+}
+
+.recovered{
+    fill: green;
+    stroke-opacity: .3; 
+    stroke-width: 4;
+}
+
+.active{
+    background-color: crimson;
+    stroke-opacity: .3; 
+    stroke-width: 4;
+}
