@@ -45,7 +45,7 @@ line.link {
 </style>
 
 <body class="flex">
-    <div id="chart" class="mx-auto w-full md:w-1/2 h-screen"></div>
+    <div id="chart" class="mx-auto w-full  h-screen"></div>
     <script>
 
         var linkpath = ("https://maldiviandevelopers.github.io/mv-covid19-graph/edges.csv");
@@ -72,7 +72,7 @@ line.link {
         // SETTING UP THE FORCE LAYOUT
         var force = d3.layout.force()
             //using width/height from above, but size is mainly det'd by linkDistance and charge
-            .size([width, height])
+            .size([chartDiv.clientWidth, chartDiv.clientHeight])
             // how far between nodes                         
             .linkDistance(100)
             // changes how close nodes will get to each other. Neg is farther apart.
@@ -108,13 +108,11 @@ line.link {
                 count = 0;
                 // console.log(nodelookup['MAV032'])
                 linkchecker.forEach(function (link) {
-
                     linkcollector[count] = { source: nodelookup[link.source], target: nodelookup[link.target], type: link.type };
                     console.log(linkcollector[count])
                     count++
                 });
 
-                //console.log(linkcollector)
                 var nodes = d3.values(nodecollector);
                 var links = d3.values(linkcollector);
 
@@ -140,8 +138,7 @@ line.link {
                     .attr("r", 30)
                     .attr("class", function (d) { return "node " + d.status; })
                     .call(force.drag)
-                    .on("mouseover", function(d) {	
-                        console.log("hover", d)	
+                    .on("mouseover", function(d, e, f) {	
                         var tipText = `<strong>${d.date_detected}</strong><br>`
                         tipText = (d.age) ? tipText + `<br>Age: <strong>${d.age}</strong>` : tipText
                         tipText = (d.gender!=='n/a') ? tipText + `<br>Gender: <strong>${(d.gender=='m') ? 'Male' : 'Female'}</strong>` : tipText
