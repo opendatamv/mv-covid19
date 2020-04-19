@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+        <style>
+            .container {
+                height: 100%;
+                overflow-y: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <canvas id="chart"></canvas>
+        </div>
+     
+    </body>
+    <script>
+d3.csv('../../nodes.csv')
+  .then(makeChart);
+function count_cases_per_date(dates_detected, unique_dates) {
+    var temp_array = [];
+    var cases;
+    for(var i=0; i<unique_dates.length; i++) {
+        cases = 0;
+        for(var j=0; j<dates_detected.length; j++) {
+            if(unique_dates[i] == dates_detected[j]) {
+                cases = cases + 1;
+                var nodedata = { date_detected: unique_dates[i], case: cases }
+              temp_array[i] = nodedata;   
+          }
+        }
+    }
+  //  console.log(temp_array);
+    return temp_array;
+}
+
+function filter_just_counts(dataset) {
+    var temp = [];
+    for (var i = 0; i< dataset.length; i++) {
+        temp[i] = dataset[i].case;
+    }
+    console.log(temp);
+    return temp;
+}
+
+
+
+function makeChart(nodes) {
+var dates_detected = nodes.map(function(d) { return d.date_detected});
+var unique_dates = Array.from(new Set(dates_detected));
+var cases_by_date = count_cases_per_date(dates_detected, unique_dates);
+var just_counts = filter_just_counts(cases_by_date);
+
+
+  var chart = new Chart('chart', {
+            type: 'line',
+            options: {
+                responsive: true,
+            maintainAspectRatio: false,
+            title: {
+            display: true,
+            text: 'Number of Confirmed cases per Date'
+        },
+      legend: {
+        display: false
+      }
+    },
+            data: {
+            labels: unique_dates,
+            datasets: [
+                    {
+                     
+                data: just_counts
+                    }
+                    ]
+        },
+        
+});
+}
+    </script>
+</html>
