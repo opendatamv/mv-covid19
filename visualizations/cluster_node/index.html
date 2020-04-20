@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Cluster layout</title>
+</head>
+
+<style>
+.container {
+        height: 100%;
+        width: 100%;
+        background: gray;
+        margin: 0 auto;
+    }
+
+  .textstyle {
+  font-family: "Corbel";
+  font-size: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 100px;					
+    height: 28px;					
+    padding: 4px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+</style>
+
+<body>
+    <div class="container">
+        <svg id="chart"></svg>
+    </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
