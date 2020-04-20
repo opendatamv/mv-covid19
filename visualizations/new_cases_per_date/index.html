@@ -19,6 +19,7 @@
     <script>
 d3.csv('../../nodes.csv')
   .then(makeChart);
+
 function count_cases_per_date(dates_detected, unique_dates) {
     var temp_array = [];
     var cases;
@@ -48,7 +49,15 @@ function filter_just_counts(dataset) {
 
 
 function makeChart(nodes) {
-var dates_detected = nodes.map(function(d) { return d.date_detected});
+var dates_detected_dirty = nodes.map(function(d) { return d.date_detected});
+var dates_detected = [];
+for(var k=0; k<dates_detected_dirty.length; k++) {
+    if(dates_detected_dirty[k].includes("n/a")) {
+        //ignore
+    } else {
+        dates_detected.push(dates_detected_dirty[k]);
+    }
+}
 var unique_dates = Array.from(new Set(dates_detected));
 var cases_by_date = count_cases_per_date(dates_detected, unique_dates);
 var just_counts = filter_just_counts(cases_by_date);
