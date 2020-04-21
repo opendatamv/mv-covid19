@@ -1,0 +1,148 @@
+  <!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Cluster layout</title>
+  <style>
+    body, div {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    .container {
+            background: rgb(197, 194, 194);
+            height: 100%;
+           padding: 10px;
+            margin: 0 auto; 
+            
+        }
+      canvas {
+        width:90%;
+        height: 90%;
+        box-sizing: border-box;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="chart"></canvas>
+    </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
+
+<script>
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    d3.csv('../../nodes.csv')
+      .then(makeChart);
+    //here
+    function count_cases_per_island(island_list, unique_islands) {
+        var temp_array = [];
+        var cases;
+        for(var i=0; i<unique_islands.length; i++) {
+            cases = 0;
+            for(var j=0; j<island_list.length; j++) {
+                if(unique_islands[i] == island_list[j]) {
+                    cases = cases + 1;
+                    var nodedata = { island_deceted: unique_islands[i], case: cases }
+                  temp_array[i] = nodedata;   
+              }
+            }
+        }
+      //  console.log(temp_array);
+        return temp_array;
+    }
+    
+    function prepare_colors(unique_islands) {
+      var temp_colorset = [];
+      for(var i=0; i<unique_islands; i++) {
+        temp_colorset.push(color(i));
+      }
+      console.log(temp_colorset);
+            return temp_colorset;
+    }
+
+    function filter_just_counts(dataset) {
+        var temp = [];
+        for (var i = 0; i< dataset.length; i++) {
+            temp[i] = dataset[i].case;
+        }
+        console.log(temp);
+        return temp;
+    }
+    
+    
+    
+    function makeChart(nodes) {
+
+    var island_list_unfiltered = nodes.map(function(d) { return d.location_detected});
+    var island_list = [];
+    for(var k=0; k<island_list_unfiltered.length; k++) {
+        if(island_list_unfiltered[k] == 'Maale') {
+          island_list.push('Male City');
+        } else {
+          island_list.push(island_list_unfiltered[k]);
+        }
+    }
+    var unique_islands = Array.from(new Set(island_list));
+
+    var cases_by_islands = count_cases_per_island(island_list, unique_islands);
+    var colorset = prepare_colors(unique_islands.length);
+    var just_counts = filter_just_counts(cases_by_islands);
+    
+    
+      var chart = new Chart('chart', {
+                type: 'doughnut',
+                options: {
+                    responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                display: true,
+                text: 'Confirmed cases by Islands - Island Doughnut'
+            },
+//
+plugins: {
+      labels: {
+        // render 'label', 'value', 'percentage', 'image' or custom function, default is 'percentage'
+        render: 'value',
+        fontSize: 12,
+        fontColor: '#fff',
+        fontStyle: 'normal',
+        textShadow: true,
+        shadowBlur: 15,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'black',
+        arc: false,
+      }
+    },
+
+            //
+          legend: {
+            display: true
+          }
+        },
+                data: {
+                labels: unique_islands,
+                datasets: [{    
+                    data: just_counts,
+                    backgroundColor: colorset,
+                  borderColor: "white",
+                  borderWidth: 2
+
+
+                        }]
+            },
+            
+    });
+    }
+        </script>
+</body>
+</html>
+
+
+
