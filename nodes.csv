@@ -1,57 +1,77 @@
 case_id,date_detected,date_recovered,location_detected,description,status,gender,age
-CLUSTER[Lily],n/a,,Maale,Cluster connected to case 27,n/a,n/a,n/a
 CLUSTER[IHUSAAN],n/a,,Maale,Ihusaan Fihaara,n/a,n/a,n/a
+CLUSTER[Lily],n/a,,Maale,Cluster connected to case 27,n/a,n/a,n/a
 CLUSTER[MHA],n/a,,Maale,Cluster related MHA employee,n/a,n/a,n/a
 CLUSTER[und:imaaduddin],n/a,,Maale,undocumented immigrant cluster from people kept imaaduddin,n/a,n/a,n/a
-MAV021,15-4-20,,Maale,,active,f,35
-MAV022,16-4-20,,Maale,,active,m,2
-MAV023,16-4-20,,Maale,,active,f,37
-MAV024,17-4-20,,Maale,,active,m,46
-MAV025,17-4-20,,Maale,,active,f,15
-MAV026,17-4-20,,Maale,,active,f,37
-MAV027,17-4-20,,Maale,,active,f,37
-MAV028,17-4-20,,Maale,,active,m,47
-MAV029,18-4-20,,Maale,,active,m,37
-MAV030,18-4-20,,Maale,,active,f,33
-MAV031,18-4-20,,Maale,,active,f,37
-MAV032,18-4-20,,Maale,,active,m,32
-MAV033,18-4-20,,Maale,,active,n/a,8
-MAV034,18-4-20,,Maale,,active,f,24
-MAV035,18-4-20,,Maale,,active,n/a,n/a
-MAV036,19-4-20,,Maale,,active,n/a,n/a
-MAV037,19-4-20,,Maale,,active,n/a,n/a
-MAV038,19-4-20,,Maale,,active,n/a,n/a
-MAV039,19-4-20,,Maale,,active,n/a,n/a
-MAV040,19-4-20,,Maale,,active,n/a,n/a
-MAV041,19-4-20,,Maale,,active,n/a,n/a
-MAV042,19-4-20,,Maale,,active,n/a,n/a
-MAV043,19-4-20,,Maale,,active,n/a,n/a
-MAV044,19-4-20,,Maale,,active,n/a,n/a
-MAV045,19-4-20,,Maale,,active,n/a,n/a
-MAV046,19-4-20,,Maale,,active,n/a,n/a
-MAV047,19-4-20,,Maale,,active,n/a,n/a
-MAV048,19-4-20,,Maale,,active,n/a,n/a
-MAV049,19-4-20,,Maale,,active,n/a,n/a
-MAV050,19-4-20,,Maale,,active,n/a,n/a
-MAV051,19-4-20,,Maale,,active,n/a,n/a
-MAV052,19-4-20,,Uligamu,,active,n/a,n/a
-MAV053,20-4-20,,Maale,,active,n/a,n/a
-MAV054,20-4-20,,Maale,,active,n/a,n/a
-MAV055,20-4-20,,Maale,,active,n/a,n/a
-MAV056,20-4-20,,Maale,,active,n/a,n/a
-MAV057,20-4-20,,Maale,,active,n/a,n/a
-MAV058,20-4-20,,Maale,,active,n/a,n/a
-MAV059,20-4-20,,Maale,,active,n/a,n/a
-MAV060,20-4-20,,Maale,,active,n/a,n/a
-MAV061,20-4-20,,Maale,,active,n/a,n/a
-MAV062,20-4-20,,Maale,,active,n/a,n/a
-MAV063,20-4-20,,Maale,,active,n/a,n/a
-MAV064,20-4-20,,Maale,,active,n/a,n/a
-MAV065,20-4-20,,Maale,,active,n/a,n/a
-MAV066,20-4-20,,Maale,,active,n/a,n/a
-MAV067,20-4-20,,Maale,,active,n/a,n/a
-MAV068,21-4-20,,Maale,Bangladesh Citizen - Kuda Villingili,active,n/a,n/a
-MAV069,21-4-20,,Maale,Maldivian - MNDF,active,n/a,n/a
+MAV001,n/a,,n/a,Turkish Citizen,n/a,f,49
+MAV002,n/a,,n/a,South African Citizen,n/a,m,56
+MAV003,n/a,,n/a,Italian Citizen,n/a,m,69
+MAV004,n/a,,n/a,Italian Citizen,n/a,f,67
+MAV005,n/a,,n/a,German Citizen,n/a,f,27
+MAV006,n/a,,n/a,British Citizen,n/a,f,32
+MAV007,n/a,,n/a,Italian Citizen,n/a,f,63
+MAV008,n/a,,n/a,Italian Citizen,n/a,m,63
+MAV009,n/a,,n/a,Italian Citizen,n/a,f,40
+MAV010,n/a,,n/a,Italian Citizen,n/a,f,44
+MAV011,n/a,,n/a,Italian Citizen,n/a,m,30
+MAV012,n/a,,n/a,Italian Citizen,n/a,m,51
+MAV013,n/a,,n/a,Italian Citizen,n/a,m,38
+MAV014,n/a,,n/a,Italian Citizen,n/a,f,48
+MAV015,n/a,,n/a,Italian Citizen,n/a,m,76
+MAV016,n/a,,n/a,Maldivian,n/a,m,38
+MAV017,n/a,,n/a,Maldivian,n/a,m,22
+MAV018,n/a,,n/a,Maldivian,n/a,m,20
+MAV019,n/a,,n/a,Maldivian,n/a,m,19
+MAV020,n/a,,n/a,Maldivian,n/a,m,23
+MAV021,15-4-20,,Maale,Maldivian,active,f,35
+MAV022,16-4-20,,Maale,Maldivian,active,m,2
+MAV023,16-4-20,,Maale,Maldivian,active,f,37
+MAV024,17-4-20,,Maale,Maldivian,active,m,46
+MAV025,17-4-20,,Maale,Maldivian,active,f,15
+MAV026,17-4-20,,Maale,Maldivian,active,f,37
+MAV027,17-4-20,,Maale,Maldivian,active,f,37
+MAV028,17-4-20,,Maale,Maldivian,active,m,47
+MAV029,18-4-20,,Maale,Maldivian,active,m,37
+MAV030,18-4-20,,Maale,Maldivian,active,f,33
+MAV031,18-4-20,,Maale,Maldivian,active,f,37
+MAV032,18-4-20,,Maale,Bangladesh Citizen,active,m,32
+MAV033,18-4-20,,Maale,Maldivian,active,f,8
+MAV034,18-4-20,,Maale,Maldivian,active,f,24
+MAV035,18-4-20,,Maale,Maldivian,active,m,28
+MAV036,19-4-20,,Maale,Bangladesh Citizen,active,m,27
+MAV037,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV038,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV039,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV040,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV041,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV042,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV043,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV044,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV045,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV046,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV047,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV048,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV049,19-4-20,,Maale,Bangladesh Citizen,active,m,n/a
+MAV050,19-4-20,,Maale,Indian Citizen,active,m,52
+MAV051,19-4-20,,Maale,Indian Citizen,active,m,49
+MAV052,19-4-20,,Uligamu,Maldivian,active,m,27
+MAV053,20-4-20,,Maale,Maldivian,active,m,64
+MAV054,20-4-20,,Maale,Maldivian,active,m,38
+MAV055,20-4-20,,Maale,Maldivian,active,m,60
+MAV056,20-4-20,,Maale,Maldivian,active,f,26
+MAV057,20-4-20,,Maale,Maldivian,active,m,59
+MAV058,20-4-20,,Maale,Maldivian,active,m,39
+MAV059,20-4-20,,Maale,Bangladesh Citizen,active,m,23
+MAV060,20-4-20,,Maale,Bangladesh Citizen,active,m,21
+MAV061,20-4-20,,Maale,Maldivian,active,m,36
+MAV062,20-4-20,,Maale,Indian Citizen,active,m,29
+MAV063,20-4-20,,Maale,Indian Citizen,active,m,36
+MAV064,20-4-20,,Maale,Indian Citizen,active,m,38
+MAV065,20-4-20,,Maale,Maldivian,active,m,50
+MAV066,20-4-20,,Maale,Maldivian,active,f,37
+MAV067,20-4-20,,Maale,Indian Citizen,active,m,54
+MAV068,21-4-20,,Maale,Bangladesh Citizen - Kuda Villingili,active,m,32
+MAV069,21-4-20,,Maale,Maldivian - MNDF,active,m,41
 MAV070,21-4-20,,Maale,Maldivian - MHA Cluster,active,n/a,n/a
 MAV071,21-4-20,,Maale,Maldivian - MHA Cluster,active,n/a,n/a
 MAV072,21-4-20,,Maale,Maldivian - MHA Cluster,active,n/a,n/a
