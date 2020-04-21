@@ -2,6 +2,7 @@ case_id,date_detected,date_recovered,location_detected,description,status,gender
 CLUSTER[Lily],n/a,,Maale,Cluster connected to case 27,n/a,n/a,n/a
 CLUSTER[IHUSAAN],n/a,,Maale,Ihusaan Fihaara,n/a,n/a,n/a
 CLUSTER[MHA],n/a,,Maale,Cluster related MHA employee,n/a,n/a,n/a
+CLUSTER[und:imaaduddin],n/a,,Maale,undocumented immigrant cluster from people kept imaaduddin,n/a,n/a,n/a
 MAV021,15-4-20,,Maale,,active,f,35
 MAV022,16-4-20,,Maale,,active,m,2
 MAV023,16-4-20,,Maale,,active,f,37
