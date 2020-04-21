@@ -37,8 +37,8 @@ Promise.all([
         .id(function(d) {
           return d.case_id
         }))
-      .force("charge", d3.forceManyBody().strength(-2))
-      .force("collide", d3.forceCollide(25))
+      .force("charge", d3.forceManyBody().strength(-1))
+      .force("collide", d3.forceCollide(22))
       .force("center", d3.forceCenter(winwidth/2, winheight/2));
     
       var div = d3.select("body").append("div")	
@@ -58,9 +58,9 @@ Promise.all([
       .data(data[0])
       .enter()
       .append("circle")
-      .attr("r", 17)
+      .attr("r", 16)
       .style("stroke", "#444")
-      .style("stroke-width", 2)
+      .style("stroke-width", 1)
       .style("fill", function(d) {
          if(d.case_id.includes("CLUSTER")) {
            return "black";
