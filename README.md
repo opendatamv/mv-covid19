@@ -5,14 +5,13 @@ cluster graphs. View the included render in this repository at
 
 **[Preview Sample](https://maldiviandevelopers.github.io/mv-covid19-graph/)**
 
-**Disclaimer: This is unofficial source with community contributed data**
+~~**Disclaimer: This is unofficial source with community contributed data**~~
+
+as of 24/04/2020 the files `nodes.csv` and `edges.csv` are deprecated in favor of `nodes_official.csv` and `edges_official.csv` which are dumped from the HPA official dashboard periodically
 
 ### How to contribute
 
-1. **Contributing data**  
-Make changes to `nodes.csv`, `edges.csv`. Please follow guidelines
-
-2. **Contributing visuals**  
+1. **Contributing visuals**  
 Create a subdirectory under `visualizations` for your awesome sample, and update `index.html` to point to it
    
 ### Guidelines for contribution
