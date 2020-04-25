@@ -8,27 +8,37 @@
 .container {
         height: 100%;
         width: 100%;
-        background: gray;
+        background: rgb(56, 55, 55);
         margin: 0 auto;
     }
 
+    .shadow {
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  /* Similar syntax to box-shadow */
+}
+
   .textstyle {
-  font-family: "Corbel";
-  font-size: 8px;
+  font-family: "Consolas";
+  fill:white;
+  font-size: 11px;
   font-weight: bold;
   cursor: pointer;
 }
 div.tooltip {	
     position: absolute;			
-    text-align: center;			
-    width: 100px;					
-    height: 28px;					
+    text-align: left;											
     padding: 4px;				
-    font: 12px sans-serif;		
+    font: 20px sans-serif;		
     background: lightsteelblue;	
     border: 0px;		
     border-radius: 8px;			
     pointer-events: none;			
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 </style>
@@ -41,9 +51,155 @@ div.tooltip {
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
 <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-<script src="script.js" type="text/javascript"></script>
+<script type="text/javascript">
+Promise.all([
+    d3.csv('../../nodes_official.csv'),
+      d3.csv('../../edges_official.csv', function(d) {
+        return {
+          source: d.to,
+          target: d.from,
+          dashes: d.dashes
+        }
+      }),
+      ]).then(makeChart)
+      .catch(function(err) {
+      console.log(err);
+      })
+    
+    function makeChart(data) {
+      console.log(data[1]);
+
+
+    data[0].forEach(function(d, i) {
+        d.group = i
+      });
+      //
+
+      data[0].forEach(function(d) { //nodes
+        data[1].forEach(function(e) { //edges
+    
+          if (e.source === d.ID || e.target === d.ID) {
+            data[0].find(function(f) {
+              return f.ID === e.source
+            }).group = d.group;
+            data[0].find(function(f) {
+              return f.ID === e.target
+            }).group = d.group;
+          }
+    
+        })
+      
+      });
+    
+    var winheight = window.innerHeight;
+    var winwidth = window.innerWidth;
+      var svg = d3.select("svg");
+      svg.attr("viewBox", `0 0 ` + winwidth + ` ` + winheight +``)
+      .attr("class", "shadow");
+    
+      var force = d3.forceSimulation()
+      .force("link", d3.forceLink()
+        .id(function(d) {
+          return d.ID;
+        }))
+      .force("charge", d3.forceManyBody().strength(-1))
+      .force("collide", d3.forceCollide(19))
+      .force("center", d3.forceCenter(winwidth/2, winheight/2));
+    
+      var div = d3.select("body").append("div")	
+      .attr("class", "tooltip")				
+      .style("opacity", 0);
+
+    var edges = svg.selectAll("line")
+      .data(data[1])
+      .enter()
+      .append("line")
+      .style("stroke", "#aaa")
+      .style("stroke-width", 2);
+    
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
+    
+    var nodes = svg.selectAll("circle")
+      .data(data[0])
+      .enter()
+      .append("circle")
+      .attr("r", 16)
+      .style("stroke", "#444")
+      .style("stroke-width", 1)
+      .style("fill", function(d) {
+        //  if(d.ID.includes("CLUSTER")) {
+        //    return "black";
+        //  }
+        return color(d.group);
+      })
+      .on("mouseover", function(d) {		
+        div.transition()		
+            .duration(200)		
+            .style("opacity", .8);		
+        div.html("<ul>" +
+                  "<li>Case ID: " + d.Case + 
+                  "</li><li>Reference: " + d.ID + 
+                  "</li><li>Age & Gender: " + d.Age + "/" + d.Gender +
+                  "</li><li>Nationality: " + d.Nationality+
+                  "</li><li>Case confirmed date: " + d['Confirmed On']+
+                    "</li></ul>")	
+            .style("left", (d3.event.pageX) + "px")	
+            .style("cursor", "pointer")	
+            .style("top", (d3.event.pageY - 28) + "px");	
+        })					
+    .on("mouseout", function(d) {		
+        div.transition()		
+            .duration(500)		
+            .style("opacity", 0);	
+    });
+    
+    //
+    var labels = svg.selectAll("text")
+      .data(data[0])
+      .enter()
+      .append("text")
+      .attr('text-anchor', 'middle')
+      .attr('class', 'textstyle')
+      .text(function(d) {return d.Case.substring(3) });
+    
+    force.nodes(data[0]);
+    force.force("link")
+      .links(data[1]);
+    
+    force.on("tick", function() {
+      edges.attr("x1", function(d) {
+          return d.source.x;
+        })
+        .attr("y1", function(d) {
+          return d.source.y;
+        })
+        .attr("x2", function(d) {
+          return d.target.x;
+        })
+        .attr("y2", function(d) {
+          return d.target.y;
+        })
+    
+      nodes.attr("cx", function(d) {
+          return d.x;
+        })
+        .attr("cy", function(d) {
+          return d.y;
+        });
+    
+        labels.attr("transform", function(d) {
+      
+          return "translate(" + d.x + "," + d.y + ")";
+        });
+    
+    
+    });
+    
+    } 
+    
+
+
+
+</script>
 </body>
 </html>
-
-
-
