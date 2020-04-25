@@ -5,7 +5,8 @@ from bs4 import BeautifulSoup
 from csv import DictWriter
 import re
 import json
-
+from shutil import which 
+from subprocess import call
 
 def parse_last_update(page):
     soup = BeautifulSoup(page.text, features="html.parser")
@@ -74,5 +75,16 @@ if __name__ == "__main__":
         if edges:
             print(f"Writing {len(edges)} Edges to file")
             write_edges(edges)
+
+        # print git diff
+        if which("git"):
+            call([
+                "git",
+                "diff",
+                "--stat",
+                "nodes_official.csv",
+                "edges_official.csv"
+            ])
+
     else:
         print("Error: Response returned unsuccessful")
