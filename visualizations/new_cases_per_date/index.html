@@ -3,6 +3,7 @@
         <title></title>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
         <style>
             .container {
                 height: 100%;
@@ -17,7 +18,7 @@
      
     </body>
     <script>
-d3.csv('../../nodes.csv')
+d3.csv('../../nodes_official.csv')
   .then(makeChart);
 
 function count_cases_per_date(dates_detected, unique_dates) {
@@ -42,14 +43,35 @@ function filter_just_counts(dataset) {
     for (var i = 0; i< dataset.length; i++) {
         temp[i] = dataset[i].case;
     }
-    console.log(temp);
     return temp;
 }
 
+function fetch_growth(data) {
+ var temp = [];
+ var sum;
+ for(var i=0; i<data.length; i++) {
+     if(i==0) {
+         temp.push(data[i]);
+         sum = data[i];
+     } else {
+         sum = sum + Number(data[i]);
+       temp.push(sum);
+     }
+ }
+return temp;
+}
 
 
 function makeChart(nodes) {
-var dates_detected_dirty = nodes.map(function(d) { return d.date_detected});
+
+var dates_detected_dirty = nodes.map(function(d) {
+    var dd = d['Confirmed On'];
+    var temp = moment(dd, 'DD MMMM YYYY', true).format('DD/MM');
+    console.log(temp);
+    return temp;
+   //  return d['Confirmed On'];
+    }).reverse();
+
 var dates_detected = [];
 for(var k=0; k<dates_detected_dirty.length; k++) {
     if(dates_detected_dirty[k].includes("n/a")) {
@@ -60,8 +82,12 @@ for(var k=0; k<dates_detected_dirty.length; k++) {
 }
 var unique_dates = Array.from(new Set(dates_detected));
 var cases_by_date = count_cases_per_date(dates_detected, unique_dates);
-var just_counts = filter_just_counts(cases_by_date);
+var new_cases_per_date = filter_just_counts(cases_by_date);
+var growth_data = fetch_growth(new_cases_per_date);
 
+
+Chart.defaults.global.defaultFontColor = 'black';
+Chart.defaults.global.defaultFontSize = 16;
 
   var chart = new Chart('chart', {
             type: 'line',
@@ -70,18 +96,50 @@ var just_counts = filter_just_counts(cases_by_date);
             maintainAspectRatio: false,
             title: {
             display: true,
-            text: 'Number of Confirmed cases per Date'
+            text: 'Daily Case Report'
         },
       legend: {
-        display: false
+        display: true
       }
     },
             data: {
             labels: unique_dates,
             datasets: [
                     {
-                     
-                data: just_counts
+                        label: "Daily New Cases",
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(206, 152, 0, 0.49)",
+                        borderColor: "Orange", // The main line color   
+                         data: new_cases_per_date,
+                         borderJoinStyle: 'miter',
+      pointBorderColor: "black",
+      pointBackgroundColor: "white",
+      pointBorderWidth: 1,
+      pointHoverRadius: 8,
+      pointHoverBackgroundColor: "yellow",
+      pointHoverBorderColor: "brown",
+      pointHoverBorderWidth: 2,
+      pointRadius: 4,
+      pointHitRadius: 10,
+                         spanGaps: true
+                    },
+                    {
+                        label: "Total Cases",
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(255, 192, 14, 0.49)",
+                        borderColor: "#d84315", // The main line color 
+                        borderJoinStyle: 'miter',
+      pointBorderColor: "white",
+      pointBackgroundColor: "black",
+      pointBorderWidth: 1,
+      pointHoverRadius: 8,
+      pointHoverBackgroundColor: "brown",
+      pointHoverBorderColor: "yellow",
+      pointHoverBorderWidth: 2,
+      pointRadius: 4,
+      pointHitRadius: 10,
+       
+                         data: growth_data
                     }
                     ]
         },
