@@ -1,9 +1,10 @@
 import dash
+import dash_table
 from graphs import *
 import pandas as pd
 
 app = dash.Dash(external_stylesheets=[dbc.themes.SLATE])
-df = pd.read_csv("../nodes_official.csv", parse_dates=['Confirmed On', 'Recovered On', 'Deceased On'])
+df = pd.read_csv("nodes_official.csv", parse_dates=['Confirmed On', 'Recovered On', 'Deceased On'])
 
 
 app.layout = dbc.Container([
@@ -34,7 +35,13 @@ app.layout = dbc.Container([
                 dbc.Col(time_series(df), className="col-md-8"),
                 dbc.Col(doughnut_nationalities(df), className="col-md-4")
             ]
-        )
+        ),
+
+        # graph row datatable
+        # dbc.Row(
+        #     className="mt-md-4",
+        #     children = [ dbc.Col(dbc.Table.from_dataframe(df, striped=True, bordered=True, hover=True))]
+        # )
 
     ])
 
