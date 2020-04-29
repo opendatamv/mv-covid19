@@ -1,4 +1,10 @@
 ID,Case,Age,Gender,Nationality,Condition,Transmission,Cluster,Confirmed On,Recovered On,Discharged On,Deceased On
+3074,MAV0256,30,Male,Maldives,Stable,Cluster of Cases,RSC,29 April 2020,,,
+3073,MAV0255,37,Male,Maldives,Stable,Cluster of Cases,RSC,29 April 2020,,,
+3072,MAV0254,24,Female,Pakistan,Stable,Cluster of Cases,BZM,29 April 2020,,,
+3071,MAV0253,39,Male,Maldives,Stable,Cluster of Cases,,29 April 2020,,,
+3070,MAV0252,49,Male,Maldives,Stable,Cluster of Cases,,29 April 2020,,,
+3069,MAV0251,13,Male,Maldives,Stable,Cluster of Cases,,29 April 2020,,,
 3063,MAV0250,26,Female,Maldives,Stable,Cluster of Cases,AMZ,28 April 2020,,,
 3062,MAV0249,52,Male,Maldives,Stable,Cluster of Cases,AMZ,28 April 2020,,,
 3061,MAV0248,45,Male,Maldives,Stable,Cluster of Cases,AMZ,28 April 2020,,,
