@@ -56,7 +56,7 @@ def write_nodes(nodes):
 
 if __name__ == "__main__":
     doc = requests.get(
-            "https://covid19.health.gov.mv/dashboard",
+            "https://covid19.health.gov.mv/dashboard/network/",
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
                 }
