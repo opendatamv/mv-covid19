@@ -53,38 +53,50 @@ def write_nodes(nodes):
         writer.writeheader()
         writer.writerows(nodes)
 
+def fetch_document(url, title, parser):
 
-if __name__ == "__main__":
+    # retrieve the document
     doc = requests.get(
-            "https://covid19.health.gov.mv/dashboard/network/",
-            headers = {
+           url, 
+           headers = {
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
-                }
+            }
         )
+
     if doc.status_code == 200:                  # note: requests doesn't necessary mean HTTP200 here
         updated_on = parse_last_update(doc)
-        print(f"Fetched Dashboard: {updated_on}")
+        print(f"Fetched {title}: {updated_on}")
+        return parser(doc)
+    else:
+        print(f"Error: Failed to fetch {title}") 
+        return None
+
+
+if __name__ == "__main__":
+    
         
-        # process nodes
-        nodes = parse_nodes(doc)
-        if nodes:
-            print(f"Writing {len(nodes)} Nodes to file")
-            write_nodes(nodes)
+    # process nodes
+    nodes = fetch_document("https://covid19.health.gov.mv/dashboard/list/", "Nodes", parse_nodes)
+    if nodes:
+        print(f"Writing {len(nodes)} Nodes to file")
+        write_nodes(nodes)
 
-        edges = parse_edges(doc)
-        if edges:
-            print(f"Writing {len(edges)} Edges to file")
-            write_edges(edges)
+    # process edges
+    edges = fetch_document("https://covid19.health.gov.mv/dashboard/network/", "Edges", parse_edges)
+    if edges:
+        print(f"Writing {len(edges)} Edges to file")
+        write_edges(edges)
 
-        # print git diff
-        if which("git"):
-            call([
-                "git",
-                "diff",
-                "--stat",
-                "nodes_official.csv",
-                "edges_official.csv"
-            ])
+    # print git diff
+    print("\n")   # sugar
+    if which("git"):
+        call([
+            "git",
+            "diff",
+            "--stat",
+            "nodes_official.csv",
+            "edges_official.csv"
+        ])
 
     else:
         print("Error: Response returned unsuccessful")
