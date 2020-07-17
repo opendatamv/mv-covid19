@@ -3,7 +3,7 @@
 This repo contains flattened cluster data, to generate 
 cluster graphs. View the included render in this repository at
 
-**[Preview Sample](https://maldiviandevelopers.github.io/mv-covid19-graph/)**
+**[Preview Sample](https://opendatamv.github.io/mv-covid19/)**
 
 ~~**Disclaimer: This is unofficial source with community contributed data**~~
 
