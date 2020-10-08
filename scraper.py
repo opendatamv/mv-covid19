@@ -82,10 +82,10 @@ if __name__ == "__main__":
         write_nodes(nodes)
 
     # process edges
-    edges = fetch_document("https://covid19.health.gov.mv/dashboard/network/", "Edges", parse_edges)
-    if edges:
-        print(f"Writing {len(edges)} Edges to file")
-        write_edges(edges)
+    # edges = fetch_document("https://covid19.health.gov.mv/dashboard/network/", "Edges", parse_edges)
+    # if edges:
+    #     print(f"Writing {len(edges)} Edges to file")
+    #     write_edges(edges)
 
     # print git diff
     print("\n")   # sugar
