@@ -7,11 +7,17 @@ import re
 import json
 from shutil import which 
 from subprocess import call
+import time
+from datetime import datetime
+
 
 def parse_last_update(page):
-    soup = BeautifulSoup(page.text, features="html.parser")
-    update_tag = soup.find(lambda tag:tag.name=="div" and tag.text.startswith("Last Updated Date"))
-    return update_tag.text
+    try:
+        soup = BeautifulSoup(page.text, features="html.parser")
+        update_tag = soup.find(lambda tag:tag.name=="div" and tag.text.startswith("Last Updated Date"))
+        return update_tag.text
+    except Exception as e:
+        print("unable to parse last updated")
 
 
 def parse_edges(page):
@@ -26,15 +32,44 @@ def parse_edges(page):
         print(e)
         return None
 
+def convert_date(dt):
+
+    if not dt:
+        return None
+    else:
+        datetimeobject = datetime.strptime(dt,'%Y%m%d')
+        return datetimeobject.strftime('%d %B %Y')
 
 def parse_nodes(page):
-    soup = BeautifulSoup(page.text, features='html.parser')
+    # soup = BeautifulSoup(page.text, features='html.parser')
     
     nodes = []
-    headers = ["ID", ] + [ x.text for x in soup.select_one(".covid_table_header").find_all("div") ]
-    for row in soup.select(".covid_table_row"):
-        values = [row.get("data-id")] + [x.text for x in row.find_all("div") ]
-        nodes.append(dict(zip(headers, values)))
+    # headers = ["ID", ] + [ x.text for x in soup.select_one(".covid_table_header").find_all("div") ]
+    # for row in soup.select(".covid_table_row"):
+    #     values = [row.get("data-id")] + [x.text for x in row.find_all("div") ]
+    #     nodes.append(dict(zip(headers, values)))
+
+    items = json.loads(page.text)
+    
+    for key, item in items.items():        
+
+        node = {
+            "ID": f"MAV{item['case_id']:05}",
+            "Case": f"MAV{item['case_id']:05}",
+            "Age": item["age"],
+            "Gender": item["gender"],
+            "Nationality": item["nationality"],
+            "Condition": item["condition"],
+            "Transmission": item["infection_source"],
+            "Cluster": item["cluster"],
+            "Confirmed On": convert_date(item["confirmed_date"]),
+            "Recovered On": convert_date(item["recovered_date"]),
+            "Discharged On": convert_date(item["discharged_date"]),
+            "Deceased On": convert_date(item["deceased_date"]),
+        }
+
+
+        nodes.append(node)
 
     return nodes
 
@@ -56,6 +91,7 @@ def write_nodes(nodes):
 def fetch_document(url, title, parser):
 
     # retrieve the document
+    print(f"fetching {url}")
     doc = requests.get(
            url, 
            headers = {
@@ -76,9 +112,9 @@ if __name__ == "__main__":
     
         
     # process nodes
-    nodes = fetch_document("https://covid19.health.gov.mv/dashboard/list/", "Nodes", parse_nodes)
+    nodes = fetch_document(f"https://covid19.health.gov.mv/cases.json?t={int(time.time())}", "Nodes", parse_nodes)
+    print(f"Writing {len(nodes)} Nodes to file")
     if nodes:
-        print(f"Writing {len(nodes)} Nodes to file")
         write_nodes(nodes)
 
     # process edges
