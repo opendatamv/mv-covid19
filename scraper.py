@@ -114,6 +114,43 @@ def fetch_document(url, title, parser):
         return None
 
 
+def sanitize_node(item: dict):
+    for key in list(item.keys()):   # list to avoid mutating
+        if item[key] is None:
+            del item[key]
+
+
+def build_graph(nodes, edges):
+    import networkx as nx
+    G = nx.DiGraph()
+
+    print("Building Graph")
+
+    for node in nodes:
+        status = "active"
+        if node.get("Deceased On"):
+            status = "deceased"
+        elif node.get("Recovered On"):
+            status = "recovered"
+
+        node["status"] = status
+
+        node_id = node["ID"]
+        cluster_id = node.get("Cluster")
+
+        sanitize_node(node)
+        G.add_node(node_id, **node)
+        if cluster_id:
+            G.add_edge(node_id, cluster_id)
+
+    for edge in edges:
+        sanitize_node(edge)
+        G.add_edge(edge["from"], edge["to"], **edge)
+
+    print("Writing Graph")
+    nx.write_graphml(G, "cases.graphml")
+
+
 if __name__ == "__main__":
 
     # process nodes
@@ -123,11 +160,14 @@ if __name__ == "__main__":
         write_nodes(nodes)
 
     # process edges
-
     edges = fetch_document(f"https://covid19.health.gov.mv/data3.json?t={int(time.time())}", "Edges", parse_edges)
     if edges:
         print(f"Writing {len(edges)} Edges to file")
         write_edges(edges)
+
+
+    # generate graphml
+    build_graph(nodes, edges)
 
     # print git diff
     print("\n")  # sugar
@@ -137,7 +177,8 @@ if __name__ == "__main__":
             "diff",
             "--stat",
             "nodes_official.csv",
-            "edges_official.csv"
+            "edges_official.csv",
+            "cases.graphml"
         ])
 
     else:
