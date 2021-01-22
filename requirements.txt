@@ -3,3 +3,4 @@ brotli
 dash-bootstrap-components
 pandas
 requests
+networkx

@@ -1,33 +1,42 @@
 #!/bin/env/python
 
-import requests
-from bs4 import BeautifulSoup
-from csv import DictWriter
-import re
 import json
+import time
+from csv import DictWriter
+from datetime import datetime
 from shutil import which
 from subprocess import call
-import time
-from datetime import datetime
+
+import requests
 
 
-def parse_last_update(page):
-    try:
-        soup = BeautifulSoup(page.text, features="html.parser")
-        update_tag = soup.find(lambda tag: tag.name == "div" and tag.text.startswith("Last Updated Date"))
-        return update_tag.text
-    except Exception as e:
-        print("unable to parse last updated")
+# def parse_last_update(page):
+#     try:
+#         soup = BeautifulSoup(page.text, features="html.parser")
+#         update_tag = soup.find(lambda tag: tag.name == "div" and tag.text.startswith("Last Updated Date"))
+#         return update_tag.text
+#     except Exception as e:
+#         print("unable to parse last updated")
+
+
+def sanitize_id(val):
+    if isinstance(val, str):
+        return val
+    else:
+        return f"MAV{val:05}"
 
 
 def parse_edges(page):
+
     try:
-        pattern = re.search(
-            r"var edges = new vis\.DataSet\((.*?)\);",
-            page.text,
-            re.MULTILINE | re.DOTALL
-        )
-        return json.loads(pattern.group(1))
+        j = page.json()
+        edges = j["clusters"]
+
+        return [
+            {"from": sanitize_id(edge["from"]), "to": sanitize_id(edge["to"]), "dashes": edge.get("dashes", False)}
+            for edge in edges
+        ]
+
     except Exception as e:
         print(e)
         return None
@@ -90,7 +99,7 @@ def write_nodes(nodes):
 
 def fetch_document(url, title, parser):
     # retrieve the document
-    print(f"fetching {url}")
+    print(f"fetching {title} -> {url}")
     doc = requests.get(
         url,
         headers={
@@ -99,8 +108,6 @@ def fetch_document(url, title, parser):
     )
 
     if doc.status_code == 200:  # note: requests doesn't necessary mean HTTP200 here
-        updated_on = parse_last_update(doc)
-        print(f"Fetched {title}: {updated_on}")
         return parser(doc)
     else:
         print(f"Error: Failed to fetch {title}")
@@ -116,10 +123,11 @@ if __name__ == "__main__":
         write_nodes(nodes)
 
     # process edges
-    # edges = fetch_document("https://covid19.health.gov.mv/dashboard/network/", "Edges", parse_edges)
-    # if edges:
-    #     print(f"Writing {len(edges)} Edges to file")
-    #     write_edges(edges)
+
+    edges = fetch_document(f"https://covid19.health.gov.mv/data3.json?t={int(time.time())}", "Edges", parse_edges)
+    if edges:
+        print(f"Writing {len(edges)} Edges to file")
+        write_edges(edges)
 
     # print git diff
     print("\n")  # sugar
