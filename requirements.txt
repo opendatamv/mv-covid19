@@ -4,3 +4,4 @@ dash-bootstrap-components
 pandas
 requests
 networkx
+jupyter
