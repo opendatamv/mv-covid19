@@ -5,3 +5,5 @@ pandas
 requests
 networkx
 jupyter
+matplotlib
+pygraphviz
