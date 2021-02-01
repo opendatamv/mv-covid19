@@ -143,6 +143,13 @@ def build_graph(nodes, edges):
         sanitize_node(node)
         G.add_node(node_id, **node)
         if cluster_id:
+            if cluster_id not in G:
+                first = next((x for x in nodes if x.get('Cluster') == cluster_id), None)
+                last = next((x for x in nodes[::-1] if x.get('Cluster') == cluster_id), None)
+                cluster_node = {"Cluster": cluster_id, "Confirmed On": first.get("Confirmed On"), "Recovered On": last.get("Recovered On")}
+                sanitize_node(cluster_node)
+                G.add_node(cluster_id, **cluster_node)
+
             G.add_edge(node_id, cluster_id)
 
     for edge in edges:
