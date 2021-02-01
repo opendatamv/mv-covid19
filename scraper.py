@@ -42,11 +42,13 @@ def parse_edges(page):
         return None
 
 
-def convert_date(dt):
+def convert_date(dt, fmt='%Y%m%d'):
     if not dt:
         return None
     else:
-        datetimeobject = datetime.strptime(dt, '%Y%m%d')
+        if "-" in dt:
+            fmt = "%d-%b-%y"
+        datetimeobject = datetime.strptime(dt, fmt)
         return datetimeobject.strftime('%d %B %Y')
 
 
