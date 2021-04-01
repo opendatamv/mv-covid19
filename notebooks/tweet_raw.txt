@@ -1,0 +1,1101 @@
+As of 01.04.2021, 06:00 PM
+
+Malé area: 94
+Inhabited islands: 96
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial/islands used for other purposes : 95
+
+Total number of cases: 300
+
+
+As of 31.03.2021, 06:00 PM
+
+Malé area: 73
+Inhabited islands: 74
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial/islands used for other purposes : 79
+
+Total number of cases: 241
+
+As of 30.03.2021, 06:00 PM
+
+Malé area: 86
+Inhabited islands: 59
+Operational Resorts: 21
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial/islands used for other purposes : 1
+
+Total number of cases: 167
+
+As of 29.03.2021, 06:00 PM
+
+Malé area: 65
+Inhabited islands: 69
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 1
+Industrial/islands used for other purposes : 2
+
+Total number of cases: 147
+
+
+As of 28.03.2021, 06:00 PM
+
+Malé area: 49
+Inhabited islands: 46
+Operational Resorts: 12
+Non-operational Resorts: 0
+Live aboard: 1
+Islands under development: 0
+Industrial/islands used for other purposes : 13
+
+Total number of cases: 121
+
+
+As of 27.03.2021, 06:00 PM
+
+Malé area: 91
+Inhabited islands: 52
+Operational Resorts: 11
+Non-operational Resorts: 0
+Live aboard: 11
+Islands under development: 0
+Industrial/islands used for other purposes : 1
+
+Total number of cases: 166
+
+
+As of 26.03.2021, 06:00 PM
+
+Malé area: 59
+Inhabited islands: 11
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial/islands used for other purposes : 66
+
+Total number of cases: 146
+
+
+As of 25.03.2021, 06:00 PM
+
+Malé area: 99
+Inhabited islands: 45
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial/islands used for other purposes : 1
+
+Total number of cases: 162
+
+
+As of 24.03.2021, 06:00 PM
+
+Malé area: 89
+Inhabited islands: 31
+Operational Resorts: 19
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 139
+
+
+
+As of 23.03.2021, 06:00 PM
+
+Malé area: 91
+Inhabited islands: 11
+Operational Resorts: 26
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 128
+
+
+As of 22.03.2021, 06:00 PM
+
+Malé area: 120
+Inhabited islands: 4
+Operational Resorts: 18
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 7
+Industrial islands: 0
+
+Total number of cases: 149
+
+
+As of 21.03.2021, 06:00 PM
+
+Malé area: 102
+Inhabited islands: 17
+Operational Resorts: 14
+Non-operational Resorts: 0
+Live aboard: 6
+Islands under development: 1
+Industrial islands: 0
+
+Total number of cases: 140
+
+
+As of 20.03.2021, 06:00 PM
+
+Malé area: 52
+Inhabited islands: 22
+Operational Resorts: 7
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 81
+
+
+As of 19.03.2021, 06:00 PM
+
+Malé area: 104
+Inhabited islands: 21
+Operational Resorts: 14
+Non-operational Resorts: 0
+Live aboard: 5
+Islands under development: 1
+Industrial islands: 0
+
+Total number of cases: 145
+
+
+As of 17.03.2021, 06:00 PM
+
+Malé area: 112
+Inhabited islands: 11
+Operational Resorts: 19
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 142
+
+
+As of 16.03.2021, 06:00 PM
+
+Malé area: 132
+Inhabited islands: 13
+Operational Resorts: 2
+Non-operational Resorts: 0
+Live aboard: 3
+Islands under development: 3
+Industrial islands: 0
+
+Total number of cases: 153
+
+
+As of 15.03.2021, 06:00 PM
+
+Malé area: 80
+Inhabited islands: 7
+Operational Resorts: 7
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 94
+
+
+As of 14.03.2021, 06:00 PM
+
+Malé area: 75
+Inhabited islands: 10
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 1
+
+Total number of cases: 96
+
+
+As of 13.03.2021, 06:00 PM
+
+Malé area: 65
+Inhabited islands: 14
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 94
+
+
+As of 12.03.2021, 06:00 PM
+
+Malé area: 86
+Inhabited islands: 14
+Operational Resorts: 14
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 114
+
+
+As of 11.03.2021, 06:00 PM
+
+Malé area: 100
+Inhabited islands: 13
+Operational Resorts: 11
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 124
+
+
+As of 10.03.2021, 06:00 PM
+
+Malé area: 84
+Inhabited islands: 2
+Operational Resorts: 24
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 110
+
+
+As of 09.03.2021, 06:00 PM
+
+Malé area: 98
+Inhabited islands: 5
+Operational Resorts: 12
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 115
+
+
+As of 08.03.2021, 06:00 PM
+
+Malé area: 103
+Inhabited islands: 9
+Operational Resorts: 13
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 125
+
+
+As of 07.03.2021, 06:00 PM
+
+Malé area: 92
+Inhabited islands: 10
+Operational Resorts: 29
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 131
+
+
+As of 06.03.2021, 06:00 PM
+
+Malé area: 78
+Inhabited islands: 6
+Operational Resorts: 14
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 98
+
+
+As of 05.03.2021, 06:00 PM
+
+Malé area: 95
+Inhabited islands: 4
+Operational Resorts: 19
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 118
+
+As of 04.03.2021, 06:00 PM
+
+Malé area: 135
+Inhabited islands: 17
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 167
+
+
+As of 03.03.2021, 06:00 PM
+
+Malé area: 124
+Inhabited islands: 0
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 136
+
+
+As of 02.03.2021, 06:00 PM
+
+Malé area: 132
+Inhabited islands: 13
+Operational Resorts: 19
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 1
+
+Total number of cases: 165
+
+
+As of 01.03.2021, 06:00 PM
+
+Malé area: 152
+Inhabited islands: 23
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 186
+
+
+As of 28.02.2021, 06:00 PM
+
+Malé area: 178
+Inhabited islands: 4
+Operational Resorts: 12
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 196
+
+
+As of 27.02.2021, 06:00 PM
+
+Malé area: 92
+Inhabited islands: 5
+Operational Resorts: 16
+Non-operational Resorts: 0
+Live aboard: 5
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 118
+
+
+As of 26.02.2021, 06:00 PM
+
+Malé area: 117
+Inhabited islands: 4
+Operational Resorts: 12
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 133
+
+
+As of 25.02.2021, 06:00 PM
+
+Malé area: 145
+Inhabited islands: 10
+Operational Resorts: 24
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 5
+
+Total number of cases: 184
+
+
+As of 23.02.2021, 06:00 PM
+
+Malé area: 76
+Inhabited islands: 12
+Operational Resorts: 20
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 108
+
+
+As of 22.02.2021, 06:00 PM
+
+Malé area: 139
+Inhabited islands: 4
+Operational Resorts: 17
+Non-operational Resorts: 0
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 161
+
+
+As of 21.02.2021, 06:00 PM
+
+Malé area: 103
+Inhabited islands: 20
+Operational Resorts: 34
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 157
+
+
+As of 20.02.2021, 06:00 PM
+
+Malé area: 89
+Inhabited islands: 22
+Operational Resorts: 32
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 145
+
+
+As of 18.02.2021, 06:00 PM
+
+Malé area: 98
+Inhabited islands: 10
+Operational Resorts: 17
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 127
+
+
+As of 18.02.2021, 06:00 PM
+
+Malé area: 108
+Inhabited islands: 3
+Operational Resorts: 4
+Non-operational Resorts: 0
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 116
+
+
+
+As of 17.02.2021, 06:00 PM
+
+Malé area: 129
+Inhabited islands: 6
+Operational Resorts: 5
+Non-operational Resorts: 0
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 142
+
+
+As of 16.02.2021, 06:00 PM
+
+Malé area: 120
+Inhabited islands: 3
+Operational Resorts: 6
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 129
+
+
+As of 15.02.2021, 06:00 PM
+
+Malé area: 104
+Inhabited islands: 14
+Operational Resorts: 6
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 1
+
+Total number of cases: 125
+
+
+As of 14.02.2021, 06:00 PM
+
+Malé area: 81
+Inhabited islands: 11
+Operational Resorts: 14
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 1
+Industrial islands: 5
+
+Total number of cases: 112
+
+
+As of 13.02.2021, 06:00 PM
+
+Malé area: 101
+Inhabited islands: 15
+Operational Resorts: 6
+Non-operational Resorts: 0
+Live aboard: 14
+Islands under development: 0
+Industrial islands: 73
+
+Total number of cases: 209
+
+As of 12.02.2021, 06:00 PM
+
+Malé area: 99
+Inhabited islands: 8
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 3
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 120
+
+
+As of 11.02.2021, 06:00 PM
+
+Malé area: 162
+Inhabited islands: 14
+Operational Resorts: 10
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 186
+
+
+As of 10.02.2021, 06:00 PM
+
+Malé area: 75
+Inhabited islands: 10
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 100
+
+
+As of 09.02.2021, 06:00 PM
+
+Malé area: 154
+Inhabited islands: 11
+Operational Resorts: 27
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 192
+
+As of 08.02.2021, 06:00 PM
+
+Malé area: 98
+Inhabited islands: 19
+Operational Resorts: 9
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 126
+
+As of 07.02.2021, 06:00 PM
+
+Malé area: 92
+Inhabited islands: 15
+Operational Resorts: 13
+Non-operational Resorts: 7
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 127
+
+As of 06.02.2021, 06:00 PM
+
+Malé area: 78
+Inhabited islands: 11
+Operational Resorts: 20
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 109
+
+
+As of 05.02.2021, 06:00 PM
+
+Malé area: 110
+Inhabited islands: 20
+Operational Resorts: 7
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 137
+
+As of 04.02.2021, 06:00 PM
+
+Malé area: 110
+Inhabited islands: 9
+Operational Resorts: 13
+Non-operational Resorts: 1
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 1
+
+Total number of cases: 134
+
+
+As of 03.02.2021, 06:00 PM
+
+Malé area: 102
+Inhabited islands: 4
+Operational Resorts: 15
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 121
+
+
+As of 02.02.2021, 06:00 PM
+
+Malé area: 82
+Inhabited islands: 5
+Operational Resorts: 12
+Non-operational Resorts: 0
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 99
+
+
+As of 01.02.2021, 06:00 PM
+
+Malé area: 159
+Inhabited islands: 8
+Operational Resorts: 20
+Non-operational Resorts: 27
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 215
+
+
+As of 31.01.2021, 06:00 PM
+
+Malé area: 88
+Inhabited islands: 4
+Operational Resorts: 12
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 105
+
+
+As of 29.01.2021, 06:00 PM
+
+Malé area: 90
+Inhabited islands: 4
+Operational Resorts: 25
+Live aboard: 3
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 122
+
+
+As of 29.01.2021, 06:00 PM
+
+Malé area: 87
+Inhabited islands: 21
+Operational Resorts: 10
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 118
+
+
+As of 28.01.2021, 06:00 PM
+
+Malé area: 93
+Inhabited islands: 4
+Operational Resorts: 8
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 106
+
+
+As of 27.01.2021, 06:00 PM
+
+Malé area: 112
+Inhabited islands: 7
+Operational Resorts: 24
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 143
+
+
+As of 26.01.2021, 06:00 PM
+
+Malé area: 93
+Inhabited islands: 14
+Operational Resorts: 36
+Live aboard: 2
+Islands under development:
+Industrial islands: 0
+
+Total number of cases: 145
+
+As of 25.01.2021, 06:00 PM
+
+Malé area: 78
+Inhabited islands: 11
+Operational Resorts: 20
+Live aboard: 0
+Islands under development:
+Industrial islands: 0
+
+Total number of cases: 109
+
+As of 24.01.2021, 06:00 PM
+
+Malé area: 79
+Inhabited islands: 5
+Operational Resorts: 23
+Live aboard: 1
+Islands under development:
+Industrial islands: 0
+
+Total number of cases: 108
+
+
+As of 23.01.2021, 06:00 PM
+
+Malé area: 31
+Inhabited islands: 9
+Operational Resorts: 15
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 55
+
+
+As of 22.01.2021, 06:00 PM
+
+Malé area: 38
+Inhabited islands: 1
+Operational Resorts: 26
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 65
+
+
+As of 21.01.2021, 06:00 PM
+
+Malé area: 29
+Inhabited islands: 5
+Operational Resorts: 17
+Live aboard: 1
+Islands under development: 1
+Industrial islands: 0
+
+Total number of cases: 53
+
+
+As of 20.01.2021, 06:00 PM
+
+Malé area: 36
+Inhabited islands: 6
+Operational Resorts: 35
+Live aboard: 2
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 79
+
+
+As of 19.01.2021, 06:00 PM
+
+Malé area: 32
+Inhabited islands: 2
+Operational Resorts: 17
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 51
+
+
+As of 18.01.2021, 06:00 PM
+
+Malé area: 35
+Inhabited islands: 8
+Operational Resorts: 26
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 69
+
+As of 17.01.2021, 06:00 PM
+
+Malé area: 19
+Inhabited islands: 3
+Operational Resorts: 28
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 51
+
+As of 16.01.2021, 06:00 PM
+
+Malé area: 30
+Inhabited islands: 13
+Operational Resorts: 41
+Live aboard: 3
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 87
+
+
+As of 15.01.2021, 06:00 PM
+
+Malé area: 27
+Inhabited islands: 16
+Operational Resorts: 07
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 50
+
+
+As of 14.01.2021, 06:00 PM
+
+Malé area: 19
+Inhabited islands: 15
+Operational Resorts: 14
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 48
+
+As of 13.01.2021, 06:00 PM
+
+Malé area: 17
+Inhabited islands: 9
+Operational Resorts: 33
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 59
+
+As of 12.01.2021, 06:00 PM
+
+Malé area: 33
+Inhabited islands: 20
+Operational Resorts: 6
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 59
+
+As of 11.01.2021, 06:00 PM
+
+Malé area: 19
+Inhabited islands: 3
+Operational Resorts: 28
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 50
+
+As of 10.01.2021, 06:00 PM
+
+Malé area: 24
+Inhabited islands: 16
+Operational Resorts: 4
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 44
+
+As of 09.01.2021, 06:00 PM
+
+Malé area: 15
+Inhabited islands: 0
+Operational Resorts: 10
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 25
+
+As of 08.01.2021, 06:00 PM
+
+Malé area: 11
+Inhabited islands: 6
+Operational Resorts: 34
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 52
+
+As of 07.01.2021, 06:00 PM
+
+Malé area: 17
+Inhabited islands: 2
+Operational Resorts: 2
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 21
+
+As of 06.01.2021, 06:00 PM
+
+Malé area: 26
+Inhabited islands: 1
+Operational Resorts: 7
+Live aboard: 3
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 37
+
+As of 05.01.2021, 06:00 PM
+
+Malé area: 20
+Inhabited islands: 2
+Operational Resorts: 15
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 37
+
+As of 04.01.2021, 06:00 PM
+
+Malé area: 11
+Inhabited islands: 3
+Operational Resorts: 11
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 26
+
+As of 03.01.2021, 06:00 PM
+
+Malé area: 24
+Inhabited islands: 1
+Operational Resorts: 6
+Live aboard: 1
+Islands under development: 0
+Industrial islands: 1
+
+Total number of cases: 33
+
+As of 02.01.2021, 06:00 PM
+
+Malé area: 17
+Inhabited islands: 0
+Operational Resorts: 13
+Live aboard: 0
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 30
+
+As of 01.01.2021, 06:00 PM
+
+Malé area: 25
+Inhabited islands: 2
+Operational Resorts: 3
+Live aboard: 17
+Islands under development: 0
+Industrial islands: 0
+
+Total number of cases: 47
