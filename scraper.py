@@ -48,8 +48,11 @@ def convert_date(dt, fmt='%Y%m%d'):
     else:
         if "-" in dt:
             fmt = "%d-%b-%y"
-        datetimeobject = datetime.strptime(dt, fmt)
-        return datetimeobject.strftime('%d %B %Y')
+        try:
+            datetimeobject = datetime.strptime(dt, fmt)
+            return datetimeobject.strftime('%d %B %Y')
+        except Exception as e:
+            return None
 
 
 def parse_nodes(page):
