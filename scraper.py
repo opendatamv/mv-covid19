@@ -26,20 +26,10 @@ def sanitize_id(val):
         return f"MAV{val:05}"
 
 
-def parse_edges(page):
-
-    try:
-        j = page.json()
-        edges = j["clusters"]
-
-        return [
-            {"from": sanitize_id(edge["from"]), "to": sanitize_id(edge["to"]), "dashes": edge.get("dashes", False)}
-            for edge in edges
-        ]
-
-    except Exception as e:
-        print(e)
-        return None
+def sanitize_node(item: dict):
+    for key in list(item.keys()):   # list to avoid mutating
+        if item[key] is None:
+            del item[key]
 
 
 def convert_date(dt, fmt='%Y%m%d'):
@@ -56,35 +46,38 @@ def convert_date(dt, fmt='%Y%m%d'):
 
 
 def parse_nodes(page):
-    # soup = BeautifulSoup(page.text, features='html.parser')
 
     nodes = []
-    # headers = ["ID", ] + [ x.text for x in soup.select_one(".covid_table_header").find_all("div") ]
-    # for row in soup.select(".covid_table_row"):
-    #     values = [row.get("data-id")] + [x.text for x in row.find_all("div") ]
-    #     nodes.append(dict(zip(headers, values)))
-
+    edges = []
     items = json.loads(page.text)
 
     for key, item in items.items():
         node = {
-            "ID": f"MAV{item['case_id']:05}",
-            "Case": f"MAV{item['case_id']:05}",
-            "Age": item["age"],
-            "Gender": item["gender"],
-            "Nationality": item["nationality"],
-            "Condition": item["condition"],
-            "Transmission": item["infection_source"],
-            "Cluster": item["cluster"],
-            "Confirmed On": convert_date(item["confirmed_date"]),
-            "Recovered On": convert_date(item["recovered_date"]),
-            "Discharged On": convert_date(item["discharged_date"]),
-            "Deceased On": convert_date(item["deceased_date"]),
+            "ID": sanitize_id(item['i']),
+            "Case": sanitize_id(item['i']),
+            "Age": item["a"],
+            "Gender": item["g"],
+            "Nationality": item["n"],
+            "Condition": item["c"],
+            "Transmission": item["s"],
+            "Cluster": item["l"],
+            "Confirmed On": convert_date(item["o"]),
+            "Recovered On": convert_date(item["r"]),
+            "Discharged On": convert_date(item["e"]),
+            "Deceased On": convert_date(item["t"]),
+            "Hospitalized": item["h"]
         }
 
         nodes.append(node)
 
-    return nodes
+        if "p" in item.keys():
+            for p in item["p"]:
+                edges.append({
+                    "from": sanitize_id(p),
+                    "to": node["ID"],
+                })
+
+    return nodes, edges
 
 
 def write_edges(edges):
@@ -117,12 +110,6 @@ def fetch_document(url, title, parser):
     else:
         print(f"Error: Failed to fetch {title}")
         return None
-
-
-def sanitize_node(item: dict):
-    for key in list(item.keys()):   # list to avoid mutating
-        if item[key] is None:
-            del item[key]
 
 
 def build_graph(nodes, edges):
@@ -165,18 +152,17 @@ def build_graph(nodes, edges):
 
 if __name__ == "__main__":
 
+    nodes, edges = fetch_document(f"https://covid19.health.gov.mv/cases.json?t={int(time.time())}", "Data", parse_nodes)
+
     # process nodes
-    nodes = fetch_document(f"https://covid19.health.gov.mv/cases.json?t={int(time.time())}", "Nodes", parse_nodes)
     print(f"Writing {len(nodes)} Nodes to file")
     if nodes:
         write_nodes(nodes)
 
     # process edges
-    edges = fetch_document(f"https://covid19.health.gov.mv/data3.json?t={int(time.time())}", "Edges", parse_edges)
     if edges:
         print(f"Writing {len(edges)} Edges to file")
         write_edges(edges)
-
 
     # generate graphml
     build_graph(nodes, edges)
