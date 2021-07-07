@@ -19,7 +19,7 @@ Create a subdirectory under `visualizations` for your awesome sample, and update
 * Do not change the schema of the files
 * Do not push information that breaches patient confidentiality
 
-## Implentations
+## Implementations
 
 If you or your organization uses data from this repository
 to render visuals on your own website, feel free to update
